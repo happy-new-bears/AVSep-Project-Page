@@ -65,7 +65,7 @@
             </div>
 
             <div class="is-size-5 publication-authors">
-              <span class="author-block">School of Computer Science, University of Birmingham<br>BMVC 2025</span>
+              <span class="author-block">The MIx Group, School of Computer Science, University of Birmingham<br>BMVC 2025</span>
               <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
             </div>
 
@@ -106,59 +106,84 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Self-supervised audio-visual source separation leverages natural correlations between audio and vision modalities to separate mixed audio signals. In this work, we first systematically analyze the performance of existing multimodal fusion methods for audio-visual separation task, demonstrating that the performance of different fusion strategies is closely linked to the characteristics of the sound-middle fusion is better suited for handling short, transient sounds, while late fusion is more effective for capturing sustained and harmonically rich sounds. We thus propose a hierarchical fusion strategy that effectively integrates both fusion stages. In addition, training can be made easier by incorporating high-quality external audio representations, rather than relying solely on the audio branch to learn them independently. To explore this, we propose a representation alignment approach that aligns the latent features of the audio encoder with embeddings extracted from pre-trained audio models. Extensive experiments on MUSIC, MUSIC-21 and VGGSound datasets demonstrate that our approach achieves state-of-the-art results, surpassing existing methods under the self-supervised setting. We further analyze the impact of representation alignment on audio features, showing that it reduces modality gap between the audio and visual modalities. The project page is at: <a href="https://github.com/happy-new-bears/AVSep-HFRA">https://github.com/happy-new-bears/AVSep-HFRA</a>.
+            Self-supervised audio-visual source separation leverages natural correlations between audio and vision modalities to separate mixed audio signals. In this work, we first systematically analyze the performance of existing multimodal fusion methods for audio-visual separation task, demonstrating that the performance of different fusion strategies is closely linked to the characteristics of the sound-middle fusion is better suited for handling short, transient sounds, while late fusion is more effective for capturing sustained and harmonically rich sounds. We thus propose a hierarchical fusion strategy that effectively integrates both fusion stages. In addition, training can be made easier by incorporating high-quality external audio representations, rather than relying solely on the audio branch to learn them independently. To explore this, we propose a representation alignment approach that aligns the latent features of the audio encoder with embeddings extracted from pre-trained audio models. Extensive experiments on MUSIC, MUSIC-21 and VGGSound datasets demonstrate that our approach achieves state-of-the-art results, surpassing existing methods under the self-supervised setting. We further analyze the impact of representation alignment on audio features, showing that it reduces modality gap between the audio and visual modalities. 
           </p>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 <section class="section hero is-small">
   <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Model Overview</h2>
+    <h2 class="title is-3 has-text-centered">Relationship Between Acoustic Properties and Fusion</h2>
     <div class="columns is-centered">
       <div class="column">
-        <img src="static/images/figure2.png" alt="Model Overview" style="width:100%;">
+        <img src="static/images/figure1.PNG" alt="Relationship between Acoustic Properties of Musical Instruments and Fusion Strategies" style="width:100%;">
         <h2 class="subtitle has-text-centered">
-          The overall architecture of our proposed method.
+          Relationship Between Acoustic Properties of Musical Instruments and Fusion Strategies. Instruments with shorter transient properties and simpler harmonic structures are more suited to middle fusion. Conversely, instruments with sustained notes and complex harmonic structures benefit more from late fusion.
         </h2>
       </div>
     </div>
   </div>
 </section>
+
 <section class="section hero is-small is-light">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Model Overview</h2>
+    <div class="columns is-centered">
+      <div class="column">
+        <img src="static/images/figure2.PNG" alt="Pipeline of our proposed method" style="width:100%;">
+        <h2 class="subtitle has-text-centered">
+          Pipeline of our proposed method. The pipeline consists of three key components: audio-visual feature extraction, hierarchical fusion, and representation alignment. It takes an audio mixture and corresponding video frames as input.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-small">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Results</h2>
 
     <div class="columns is-centered has-text-centered">
       <div class="column">
         <h3 class="title is-4">Qualitative Results</h3>
-        <img src="static/images/figure3.png" alt="Qualitative Performance Comparison on MUSIC dataset" style="width:100%;">
+        <img src="static/images/figure3.PNG" alt="Qualitative Performance on MUSIC dataset" style="width:100%;">
         <h2 class="subtitle">
-          Visual comparison of our method (fourth row) with CLIPSep (third row) on the MUSIC dataset. Our approach produces cleaner, more distinct separated sounds.
+          Qualitative Performance on MUSIC dataset. Our method (the fourth row) produces cleaner and more distinct separated sounds compared to CLIPSep (the third row).
         </h2>
       </div>
     </div>
-
+    
     <div class="columns is-centered has-text-centered">
       <div class="column">
         <h3 class="title is-4">Quantitative Results</h3>
-        <img src="static/images/table1.png" alt="Table 1: Performance on MUSIC dataset">
-        <h2 class="subtitle">
-          Table 1: Performance comparison on the MUSIC dataset.
-        </h2>
+        
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <img src="static/images/table1.PNG" alt="Table 1: Performance comparison on MUSIC dataset">
+            <h2 class="subtitle">
+              Table 1: Audio-visual separation performance comparison on the MUSIC dataset. 
+            </h2>
+          </div>
         </div>
+
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <img src="static/images/table3.PNG" alt="Table 3: Performance comparison on VGGSound dataset">
+            <h2 class="subtitle">
+              Table 2: Audio-visual separation results on VGGSound. 
+            </h2>
+          </div>
+        </div>
+        
+      </div>
     </div>
+
   </div>
 </section>
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Full Paper</h2>
-      <iframe src="static/pdfs/BMVC_Han_final.pdf" width="100%" height="550"></iframe>
-    </div>
-  </div>
-</section>
+
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
@@ -166,27 +191,3 @@
   title={Audio-Visual Separation with Hierarchical Fusion and Representation Alignment},
   author={Hu, Han and Lin, Dongheng and Huang, Qiming and Hou, Yuqi and Chang, Hyung Jin and Jiao, Jianbo},
   booktitle={British Machine Vision Conference (BMVC)},
-  year={2025},
-}</code></pre>
-  </div>
-</section>
-<footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-</body>
-  </html>
